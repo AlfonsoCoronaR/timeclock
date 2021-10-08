@@ -16,6 +16,8 @@ class Notificaciones extends Migration
         Schema::create('notificaciones', function (Blueprint $table) {
             $table->id();
             $table->text('notificacion');
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id')->on('usuarios');
         });
     }
 

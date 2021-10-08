@@ -19,16 +19,15 @@ class Usuarios extends Migration
             $table->string('usuario', 50);
             $table->string('password', 200);
             $table->string('correo', 100)->unique();
-            $table->string('hora_entrada', 50);
-            $table->string('hora_comida', 50);
-            $table->string('hora_comida_regreso', 50);
-            $table->string('hora_salida', 50);
             $table->string('fecha', 30);
             $table->text('comentario')->nullable();
             $table->smallInteger('tipo_usuario');
             $table->string('ip');
+            $table->tinyInteger('disable');
             $table->unsignedBigInteger('id_grupo');
             $table->foreign('id_grupo')->references('id')->on('grupos');
+            $table->unsignedBigInteger('id_status');
+            $table->foreign('id_status')->references('id')->on('status');
         });
     }
 
