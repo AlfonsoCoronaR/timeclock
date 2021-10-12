@@ -1,26 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login GESDES</title>
-</head>
-<body>
-    <h1>Hola!</h1>
+@extends('plantilla')
+@section('contenido')
 
-    <form action="">
-        <label for="usuario"> usuario: </label>
-        <input type="text" name="usuario" id="">
-        <br>
-        <label for="password"> password: </label>
-        <input type="password" name="password" id="">
-        <br>
-        <input type="submit" value="Entrar">
-    </form>
-
+<div class="container">
+    <div class="encabezado text-center">
+        <h1>Timeclock GESDES</h1>
+    </div>
+    <div class="vh-100 row justify-content-center align-items-center">
+        <div class="card col col-lg-4 ">
+            <div class="card-header text-center">
+                <h5>Inicio de sesión</h5>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <div class="mb-3">
+                        <label for="usuario" class="form-label"> Usuario: </label>
+                        <input type="text" name="usuario" placeholder="usuario..." class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label"> Contraseña: </label>
+                        <input type="password" name="password" placeholder="contraseña..." class="form-control">
+                    </div>
     
+                    <input type="submit" value="Entrar" class="btn btn-outline-warning">
+                </form>
+            </div>
+          </div> 
+    </div>
+</div>
 
-</body>
-</html>
+@endsection
+
+
 
