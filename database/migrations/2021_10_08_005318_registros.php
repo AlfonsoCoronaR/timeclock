@@ -22,7 +22,7 @@ class Registros extends Migration
             $table->string('vacaciones', 50);
             $table->string('enfermedad', 50);
             $table->unsignedBigInteger('id_usuario');
-            $table->foreign('id_usuario')->references('id')->on('usuarios');
+            $table->foreign('id_usuario')->references('id')->on('users');
         });
     }
 

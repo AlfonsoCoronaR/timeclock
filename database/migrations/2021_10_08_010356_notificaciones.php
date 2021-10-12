@@ -17,7 +17,7 @@ class Notificaciones extends Migration
             $table->id();
             $table->text('notificacion');
             $table->unsignedBigInteger('id_usuario');
-            $table->foreign('id_usuario')->references('id')->on('usuarios');
+            $table->foreign('id_usuario')->references('id')->on('users');
         });
     }
 
