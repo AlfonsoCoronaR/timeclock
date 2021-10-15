@@ -19,16 +19,15 @@ class CreateUsersTable extends Migration
             $table->string('usuario', 50);
             $table->string('password');
             $table->string('email')->unique();
-            $table->string('fecha', 30);
             $table->text('comentario')->nullable();
             $table->smallInteger('tipo_usuario');
             $table->string('ip');
             $table->tinyInteger('disable');
-            $table->timestamps();
             $table->unsignedBigInteger('id_grupo');
             $table->foreign('id_grupo')->references('id')->on('grupos');
             $table->unsignedBigInteger('id_status');
             $table->foreign('id_status')->references('id')->on('status');
+            $table->timestamps();
         });
     }
 

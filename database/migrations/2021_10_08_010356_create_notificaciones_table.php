@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Registros extends Migration
+class CreateNotificacionesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class Registros extends Migration
      */
     public function up()
     {
-        Schema::create('registros', function (Blueprint $table) {
+        Schema::create('notificaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('entrada', 50);
-            $table->string('hora_comida', 50);
-            $table->string('hora_comida_regreso', 50);
-            $table->string('salida', 50);
-            $table->string('vacaciones', 50);
-            $table->string('enfermedad', 50);
+            $table->text('notificacion');
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
         });
@@ -33,6 +28,6 @@ class Registros extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registros');
+        Schema::dropIfExists('notificaciones');
     }
 }

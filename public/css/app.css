@@ -1,7 +1,17 @@
 body {
-    background-color: darkslategray;
+    background-color: rgb(4, 70, 70);
 }
 
-.encabezado{
+.encabezado {
     color: #fff;
 }
+
+.card {
+  color: rgb(20, 124, 75);
+  background-color: rgb(253, 249, 249);
+}
+
+.boton {
+  margin-top: 39px;
+}
+

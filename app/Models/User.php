@@ -17,10 +17,21 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    protected $table = 'user';
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'name',
-        'email',
+        'usuario',
         'password',
+        'email',
+        'comentario',
+        'tipo_usuario',
+        'ip',
+        'disable',
+        'id_grupo',
+        'id_status',
+
     ];
 
     /**
@@ -30,7 +41,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
@@ -38,7 +48,20 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
+     public function Status() {
+         return $this->belongsTo(Status::class, 'id_status');
+     }
+
+     public function Grupo() {
+         return $this->belongsTo(Grupo::class, 'id_grupo');
+     }
+
+     public function Registro() {
+         return $this->hasMany(Registro::class, 'id_usuario');
+     }
+
+     public function Notificacion() {
+        return $this->hasMany(Notificacion::class, 'id_usuario'); 
+     }
 }

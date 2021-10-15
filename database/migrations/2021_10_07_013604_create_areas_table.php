@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Notificaciones extends Migration
+class CreateAreasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class Notificaciones extends Migration
      */
     public function up()
     {
-        Schema::create('notificaciones', function (Blueprint $table) {
+        Schema::create('areas', function (Blueprint $table) {
             $table->id();
-            $table->text('notificacion');
-            $table->unsignedBigInteger('id_usuario');
-            $table->foreign('id_usuario')->references('id')->on('users');
+            $table->string('area', 100);
         });
     }
 
@@ -28,6 +26,6 @@ class Notificaciones extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notificaciones');
+        Schema::dropIfExists('areas');
     }
 }

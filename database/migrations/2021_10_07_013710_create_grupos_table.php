@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Status extends Migration
+class CreateGruposTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class Status extends Migration
      */
     public function up()
     {
-        Schema::create('status', function (Blueprint $table) {
+        Schema::create('grupos', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
+            $table->string('grupo', 50);
+            $table->unsignedBigInteger('id_area');
+            $table->foreign('id_area')->references('id')->on('areas');
         });
     }
 
@@ -26,6 +28,6 @@ class Status extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('status');
+        Schema::dropIfExists('grupos');
     }
 }
