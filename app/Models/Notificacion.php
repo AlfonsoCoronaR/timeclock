@@ -15,6 +15,8 @@ class Notificacion extends Model
     protected $fillable = [
         'notificacion',
         'id_usuario',
+        'created_at',
+        'updated_at',
     ];
 
     public function User() {

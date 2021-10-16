@@ -15,9 +15,10 @@ class CreateGruposTable extends Migration
     {
         Schema::create('grupos', function (Blueprint $table) {
             $table->id();
-            $table->string('grupo', 50);
+            $table->string('grupo');
             $table->unsignedBigInteger('id_area');
             $table->foreign('id_area')->references('id')->on('areas');
+            $table->timestamps();
         });
     }
 

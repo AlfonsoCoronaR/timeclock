@@ -31,6 +31,8 @@ class User extends Authenticatable
         'disable',
         'id_grupo',
         'id_status',
+        'created_at',
+        'updated_at',
 
     ];
 
@@ -42,6 +44,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    protected $touches = ['Status'];
+    protected $touches = ['Grupo'];
 
     /**
      * The attributes that should be cast.
@@ -64,4 +69,6 @@ class User extends Authenticatable
      public function Notificacion() {
         return $this->hasMany(Notificacion::class, 'id_usuario'); 
      }
+
+
 }

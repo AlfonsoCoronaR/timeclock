@@ -24,10 +24,16 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'usuario' => $this->faker->sentence(),
             'email' => $this->faker->unique()->safeEmail(),
-            'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'tipo_usuario' => 1,
+            'ip' => $this->faker->sentence(),
+            'disable' => 0,
+            'id_grupo' => 1,
+            'id_status' => 1,
+            'created_at' => ["2020-05-05 08:45:09"],
+            'updated_at' => ["2021-10-13 15:09:37"],
         ];
     }
 
@@ -36,12 +42,4 @@ class UserFactory extends Factory
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory
      */
-    public function unverified()
-    {
-        return $this->state(function (array $attributes) {
-            return [
-                'email_verified_at' => null,
-            ];
-        });
-    }
 }
