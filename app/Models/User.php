@@ -17,7 +17,7 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $table = 'user';
+    protected $table = 'users';
     protected $primaryKey = 'id';
 
     protected $fillable = [
@@ -31,9 +31,6 @@ class User extends Authenticatable
         'disable',
         'id_grupo',
         'id_status',
-        'created_at',
-        'updated_at',
-
     ];
 
     /**
@@ -45,8 +42,8 @@ class User extends Authenticatable
         'password',
     ];
 
-    protected $touches = ['Status'];
-    protected $touches = ['Grupo'];
+    /* protected $touches = ['Status'];
+    protected $touches = ['Grupo']; */
 
     /**
      * The attributes that should be cast.
@@ -69,6 +66,4 @@ class User extends Authenticatable
      public function Notificacion() {
         return $this->hasMany(Notificacion::class, 'id_usuario'); 
      }
-
-
 }

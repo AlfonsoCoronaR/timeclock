@@ -20,8 +20,6 @@ class Registro extends Model
         'vacaciones',
         'enfermedad',
         'id_usuario',
-        'created_at',
-        'updated_at',
     ];
 
     public function User() {

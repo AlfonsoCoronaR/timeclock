@@ -15,8 +15,6 @@ class Grupo extends Model
     protected $fillable = [
         'grupo',
         'id_area',
-        'created_at',
-        'updated_at',
     ];
 
     public function Area() {

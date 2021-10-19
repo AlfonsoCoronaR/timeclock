@@ -13,10 +13,14 @@ class LoginController extends Controller
     }
 
     public function verificar(){
-        $credenciales = request()->only('usuario', 'password');
+        $credenciales = request()->validate([
+            'email' => ['required', 'email', 'string'], 
+            'password' => ['required', 'string']
+        ]);
 
         if(Auth::attempt($credenciales)){
-            return 'Estas logueado';
+            //request()->session()->regenerate();
+            return view('vistas.inicio');
         }
         return 'No estas logueado';
     }
