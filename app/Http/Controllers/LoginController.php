@@ -22,7 +22,13 @@ class LoginController extends Controller
             //request()->session()->regenerate();
             return view('vistas.inicio');
         }
-        return 'No estas logueado';
+        return back()->withErrors([
+            'email' => 'Las credenciales otorgadas no son correctas.',
+        ]);
+    }
+
+    public function inicio(){
+        return view('vistas.inicio');
     }
 }
 

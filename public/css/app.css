@@ -15,4 +15,12 @@ body {
   margin-top: 39px;
 }
 
+.menu {
+  height: 610px;
+  background-color:rgb(155, 184, 218);
+}
 
+.tabla {
+  height: 610px;
+  background-color: rgb(91, 111, 179);
+}

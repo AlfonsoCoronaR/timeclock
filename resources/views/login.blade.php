@@ -13,7 +13,7 @@
                         <h5>Inicio de sesión</h5>
                     </div>
                     <div class="card-body">
-                        <form method="POST">
+                        <form method="POST" action="{{url('/principal')}}">
                             @csrf
                             <div class="mb-3">
                                 <label for="email" class="form-label"> Correo Electrónico: </label>

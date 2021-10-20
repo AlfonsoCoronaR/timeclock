@@ -20,10 +20,9 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 
-Route::get('/', [LoginController::class, 'index']);
+Route::view('/login', 'login')->name('login')->middleware('guest');
 
-Route::post('/', [LoginController::class, 'verificar']);
+Route::post('/principal', [LoginController::class, 'verificar']);
 
-Route::get('inicio', function () {
-    return view('welcome');
-});
+Route::get('/principal', [LoginController::class, 'inicio'])->middleware('auth');
+
