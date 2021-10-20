@@ -19,14 +19,16 @@
                                 <label for="email" class="form-label"> Correo Electrónico: </label>
                                 <input type="text" name="email" placeholder="Correo electrónico..." class="form-control" >
                                 @error('email') 
-                                    {{$message}}
+                                    <small style="color: red">
+                                        {{$message}}</small>
                                 @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label"> Contraseña: </label>
                                 <input type="password" name="password" placeholder="Contraseña..." class="form-control" >
                                 @error('password') 
-                                    {{$message}}
+                                    <small style="color: red">
+                                        {{$message}}</small>
                                 @enderror
                             </div>
                             <div class="boton text-center">

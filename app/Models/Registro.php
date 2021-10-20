@@ -22,6 +22,10 @@ class Registro extends Model
         'id_usuario',
     ];
 
+    protected $casts = [
+        'datetime' => 'datetime',
+    ];
+
     public function User() {
         return $this->belongsTo(User::class, 'id_usuario');
     }

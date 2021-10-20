@@ -24,3 +24,6 @@ Route::get('/', [LoginController::class, 'index']);
 
 Route::post('/', [LoginController::class, 'verificar']);
 
+Route::get('inicio', function () {
+    return view('welcome');
+});

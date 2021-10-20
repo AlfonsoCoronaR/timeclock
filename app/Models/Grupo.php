@@ -17,6 +17,10 @@ class Grupo extends Model
         'id_area',
     ];
 
+    protected $casts = [
+        'datetime' => 'datetime',
+    ];
+
     public function Area() {
         return $this->belongsTo(Area::class, 'id_area');
     }

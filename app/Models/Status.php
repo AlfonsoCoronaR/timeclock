@@ -16,6 +16,10 @@ class Status extends Model
         'status',
     ];
 
+    protected $casts = [
+        'datetime' => 'datetime',
+    ];
+
     public function User() {
         return $this->hasMany(User::class, 'id_status');
     }

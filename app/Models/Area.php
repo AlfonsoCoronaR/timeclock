@@ -16,6 +16,10 @@ class Area extends Model
         'area',
     ];
 
+    protected $casts = [
+        'datetime' => 'datetime',
+    ];
+
     public function Grupo() {
         return $this->hasMany(Grupo::class, 'id_area');
     }

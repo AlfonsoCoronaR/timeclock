@@ -42,8 +42,9 @@ class User extends Authenticatable
         'password',
     ];
 
-    /* protected $touches = ['Status'];
-    protected $touches = ['Grupo']; */
+    protected $casts = [
+        'datetime' => 'datetime',
+    ];
 
     /**
      * The attributes that should be cast.
