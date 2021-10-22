@@ -26,3 +26,5 @@ Route::post('/principal', [LoginController::class, 'verificar']);
 
 Route::get('/principal', [LoginController::class, 'inicio'])->middleware('auth');
 
+Route::post('/salir', [LoginController::class, 'salir']);
+

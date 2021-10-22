@@ -14,8 +14,8 @@ class Registro extends Model
 
     protected $fillable = [
         'entrada',
-        'hora_comida',
-        'hora_comida_regreso',
+        'comida',
+        'comida_regreso',
         'salida',
         'vacaciones',
         'enfermedad',
