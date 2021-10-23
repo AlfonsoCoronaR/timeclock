@@ -14,25 +14,25 @@
       </li>
       <li>
        <a href="#">
+         <i class='bx bx-git-compare'></i>
+         <span class="links_name">Áreas</span>
+       </a>
+       <span class="tooltip">Áreas</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-group'></i>
+         <span class="links_name">Grupos</span>
+       </a>
+       <span class="tooltip">Grupos</span>
+     </li>
+      <li>
+       <a href="#">
          <i class='bx bx-user' ></i>
          <span class="links_name">Usuarios</span>
        </a>
        <span class="tooltip">Usuarios</span>
      </li>
-     <li>
-      <a href="#">
-        <i class='bx bx-git-compare'></i>
-        <span class="links_name">Áreas</span>
-      </a>
-      <span class="tooltip">Áreas</span>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-group'></i>
-        <span class="links_name">Grupos</span>
-      </a>
-      <span class="tooltip">Grupos</span>
-    </li>
     <li>
        <a href="#">
          <i class='bx bx-chat' ></i>
@@ -70,11 +70,6 @@
   closeBtn.addEventListener("click", ()=>{
     sidebar.classList.toggle("open");
     menuBtnChange();//calling the function(optional)
-  });
-
-  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-    sidebar.classList.toggle("open");
-    menuBtnChange(); //calling the function(optional)
   });
 
   // following are the code to change sidebar button(optional)

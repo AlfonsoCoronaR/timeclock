@@ -24,7 +24,7 @@ Route::view('/login', 'login')->name('login')->middleware('guest');
 
 Route::post('/principal', [LoginController::class, 'verificar']);
 
-Route::get('/principal', [LoginController::class, 'inicio'])->middleware('auth');
+Route::get('/registros', [LoginController::class, 'inicio'])->middleware('auth');
 
 Route::post('/salir', [LoginController::class, 'salir']);
 

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Registro;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Redirect;
@@ -15,7 +16,7 @@ class LoginController extends Controller
         return view('login');
     }
 
-    public function verificar(){
+    public function verificar(Redirector $redirect){
         $credenciales = request()->validate([
             'email' => ['required', 'email', 'string'], 
             'password' => ['required', 'string']
@@ -23,7 +24,7 @@ class LoginController extends Controller
 
         if(Auth::attempt($credenciales)){
             //request()->session()->regenerate();
-            return view('vistas.inicio');
+            return $redirect->to('/registros');
         }
         return back()->withErrors([
             'email' => 'El correo o la contraseña no son correctas.',
@@ -31,10 +32,11 @@ class LoginController extends Controller
     }
 
     public function inicio(){
-
+        //dd('Estyo aki');
         $registros = Registro::all();
-        var_dump($registros);
-        return view('vistas.inicio')->with(['regristros'=>$registros]);
+        $usuarios = User::all();
+        //dd($registros);
+        return view('vistas.inicio')->with(['registros'=>$registros, 'usuarios'=>$usuarios]);
     }
 
     public function salir(Request $request, Redirector $redirect){

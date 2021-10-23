@@ -4,36 +4,39 @@
         @section('registro')
         
         <table class="table table-striped table-bordered border-dark table-info">
-
+            <h1>Registro de usuarios</h1>
+            
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>NOMBRE</th>
                     <th>ENTRADA</th>
                     <th>COMIDA</th>
                     <th>REGRESO DE LA COMIDA</th>
                     <th>SALIDA</th>
                     <th>VACACIONES</th>
                     <th>ENFERMEDAD</th>
-                    <th>USUARIO</th>
-                    <th>FECHA DE REGISTRO</th>
                 </tr>
             </thead>
 
-            {{-- <tbody>
-                @foreach ($registros as $registro)
-                    <tr>
-                        <td>{{$registro->id}}</td>
+            <tbody>
+                <tr>
+            @foreach ($usuarios as $user)
+
+                        <td>{{$user->name}}</td>
+                    
+            @endforeach
+            @foreach ($registros as $registro)
+                    
                         <td>{{$registro->entrada}}</td>
                         <td>{{$registro->comida}}</td>
                         <td>{{$registro->comida_regreso}}</td>
                         <td>{{$registro->salida}}</td>
                         <td>{{$registro->vacaciones}}</td>
                         <td>{{$registro->enfermedad}}</td>
-                        <td>{{$registro->id_usuario}}</td>
-                        <td>{{$registro->created_at->diffForHummands()}}</td>
-                    </tr>
-                @endforeach
-            </tbody> --}}
+                    
+             @endforeach
+                </tr>
+            </tbody>
         </table>
     @endsection
 @endsection
