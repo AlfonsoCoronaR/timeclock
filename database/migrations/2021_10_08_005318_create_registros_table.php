@@ -15,12 +15,14 @@ class CreateRegistrosTable extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('entrada')->nullable();
-            $table->timestamp('comida')->nullable();
-            $table->timestamp('comida_regreso')->nullable();
-            $table->timestamp('salida')->nullable();
-            $table->timestamp('vacaciones')->nullable();
-            $table->timestamp('enfermedad')->nullable();
+            $table->date('fecha')->nullable();
+            $table->time('entrada')->nullable();
+            $table->time('comida')->nullable();
+            $table->time('comida_regreso')->nullable();
+            $table->time('salida')->nullable();
+            $table->date('vacaciones')->nullable();
+            $table->date('fin_vacaciones')->nullable();
+            $table->date('enfermedad')->nullable();
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
             $table->timestamps();

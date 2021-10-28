@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="vh-100 row justify-content-center align-items-center">
-        <div class="plantilla">
+        <div class="plantilla-login">
             <div class="encabezado text-center mb-5">
                 <img src="{{url('/img/GESDES.png')}}" alt="gesdes.png" class="gesdes">   
             </div>

@@ -1,5 +1,7 @@
 body {
     background-color: #1d1b31;
+    /* overflow: hidden; */
+    overflow-x: hidden;
 }
 
 .encabezado {
@@ -19,6 +21,31 @@ body {
   height: 100px;
   width: auto;
   border-radius: 15%;
+}
+
+.plantilla {
+  margin-left: 300px;
+  color: coral;
+  overflow: hidden;
+}
+
+.area,
+.grupo,
+.usuario {
+  font-size: 20px;
+}
+
+.usuarios {
+  max-height: 800px;
+  margin-left: 300px;
+}
+
+.card {
+  max-width: 800px;
+}
+
+.home-section {
+  background-color: #E4E9F7; 
 }
 
 /* Contenido de la barra */
@@ -250,7 +277,7 @@ body {
 .home-section{
   position: relative;
   background: #E4E9F7;
-  min-height: 100vh;
+  min-height: 110vh;
   top: 0;
   left: 78px;
   width: calc(100% - 78px);

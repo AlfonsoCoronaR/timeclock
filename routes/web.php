@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AreaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 
+Route::get('/areas', [AreaController::class, 'index']);
+
 Route::view('/login', 'login')->name('login')->middleware('guest');
 
 Route::post('/principal', [LoginController::class, 'verificar']);
@@ -27,4 +30,9 @@ Route::post('/principal', [LoginController::class, 'verificar']);
 Route::get('/registros', [LoginController::class, 'inicio'])->middleware('auth');
 
 Route::post('/salir', [LoginController::class, 'salir']);
+
+Route::view('/grupos', 'formularios.grupos');
+
+Route::view('/usuarios', 'formularios.usuarios');
+
 
