@@ -27,14 +27,14 @@
        <span class="tooltip">Grupos</span>
      </li>
       <li>
-       <a href="{{url('/usuarios')}}">
+       <a href="{{url('/usuarios/create')}}">
          <i class='bx bx-user' ></i>
          <span class="links_name">Crear Usuarios</span>
        </a>
        <span class="tooltip">Crear Usuarios</span>
      </li>
      <li>
-      <a href="#">
+      <a href="{{url('/usuarios')}}">
         <i class='bx bx-face'></i>
         <span class="links_name">Administrar Usuarios</span>
       </a>

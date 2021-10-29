@@ -16,16 +16,12 @@
                               <h3 class="card-title text-center">CREAR UN NUEVO GRUPO</h3>
 
                               <div class="card-body">
-                                <form method="POST" {{-- action="{{url('/principal')}}" --}}>
+                                <form method="POST" action="{{url('/grupos')}}">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="email" class="grupo form-label">Nuevo grupo </label>
-                                        <input type="text" name="email" placeholder="Nombre del grupo..." 
-                                                class="form-control" {{-- value="{{old('email')}}" --}} required autofocus>
-                                        {{-- @error('email') 
-                                            <small style="color: red">
-                                                {{$message}}</small>
-                                        @enderror --}}
+                                        <label for="grupo" class="grupo form-label">Nuevo grupo </label>
+                                        <input type="text" name="grupo" placeholder="Nombre del grupo..." 
+                                                class="form-control" required autofocus>
                                     </div>
                                     <div class="boton text-center">
                                         <input type="submit" value="Guardar" class="btn btn-dark">

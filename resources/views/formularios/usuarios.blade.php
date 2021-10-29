@@ -5,8 +5,8 @@
 
         <div class="container ml-5">
             <div class="vh-100 row justify-content-center align-items-center">
-                <div class="usuarios">
-                    <div class="card mb-3" >
+                <div class="usuarios mt-4">
+                    <div class="card" >
                         <div class="row g-0">
                           <div class="img-user col-md-4">
                             <img src="{{url('img/user.png')}}" class="img-fluid rounded-start" alt="usuarios.png">
@@ -19,8 +19,8 @@
                                 <form method="POST" {{-- action="{{url('/principal')}}" --}}>
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="email" class="usuario form-label">Nombre: </label>
-                                        <input type="text" name="email" placeholder="Nombre completo..." 
+                                        <label for="usuarios" class="usuario form-label">Nombre: </label>
+                                        <input type="text" name="usuarios" placeholder="Nombre completo..." 
                                                 class="form-control" {{-- value="{{old('email')}}" --}} required autofocus>
                                         {{-- @error('email') 
                                             <small style="color: red">

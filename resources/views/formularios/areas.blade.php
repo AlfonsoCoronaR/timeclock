@@ -16,16 +16,12 @@
                               <h3 class="card-title text-center">CREAR UNA NUEVA ÁREA</h3>
 
                               <div class="card-body">
-                                <form method="POST" {{-- action="{{url('/principal')}}" --}}>
+                                <form method="POST" action="{{url('/areas')}}">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="email" class="area form-label">Nueva área: </label>
-                                        <input type="text" name="email" placeholder="Nombre del área..." 
-                                                class="form-control" {{-- value="{{old('email')}}" --}} required autofocus>
-                                        {{-- @error('email') 
-                                            <small style="color: red">
-                                                {{$message}}</small>
-                                        @enderror --}}
+                                        <label for="area" class="area form-label">Nueva área: </label>
+                                        <input type="text" name="area" placeholder="Nombre del área..." 
+                                                class="form-control" required autofocus>
                                     </div>
                                     <div class="boton text-center">
                                         <input type="submit" value="Guardar" class="btn btn-dark">

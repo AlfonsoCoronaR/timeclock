@@ -4,6 +4,9 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AreaController;
+use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +24,6 @@ use App\Http\Controllers\AreaController;
 }); */
 
 
-Route::resource('/areas', AreaController::class);
-
 Route::view('/login', 'login')->name('login')->middleware('guest');
 
 Route::post('/principal', [LoginController::class, 'verificar']);
@@ -31,8 +32,10 @@ Route::get('/registros', [LoginController::class, 'inicio'])->middleware('auth')
 
 Route::post('/salir', [LoginController::class, 'salir']);
 
-Route::view('/grupos', 'formularios.grupos');
+Route::resource('/areas', AreaController::class);
 
-Route::view('/usuarios', 'formularios.usuarios');
+Route::resource('/grupos', GrupoController::class);
+
+Route::resource('/usuarios', UserController::class);
 
 

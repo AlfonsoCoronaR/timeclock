@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Area;
+use App\Models\Grupo;
 use Illuminate\Http\Request;
 
-class AreaController extends Controller
+class GrupoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $areas = Area::all();
-        return view('tablas.areasT')->with(['areas'=>$areas]);
+        $grupos = Grupo::all();
+
+        return view('tablas.gruposT')->with(['grupos'=>$grupos]);
     }
 
     /**
@@ -26,7 +27,7 @@ class AreaController extends Controller
      */
     public function create()
     {
-        return view('formularios.areas');
+        return view('formularios.grupos');
     }
 
     /**
@@ -37,13 +38,7 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        $areas = new Area();
-
-        $areas->area = $request->get('area');
-
-        $areas->save();
-
-        return redirect()->to('/areas');
+        //
     }
 
     /**
