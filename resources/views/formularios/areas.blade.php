@@ -8,7 +8,7 @@
                 <div class="plantilla">
                     <div class="card mb-3">
                         <div class="row g-0">
-                          <div class="col-md-4">
+                          <div class="img-area col-md-4">
                             <img src="{{url('img/areas.png')}}" class="img-fluid rounded-start" alt="areas.png">
                           </div>
                           <div class="col-md-8">

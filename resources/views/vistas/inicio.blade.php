@@ -8,7 +8,7 @@
             
             <thead>
                 <tr>
-                    <th>NOMBRE</th>
+                    <th>USUARIO</th>
                     <th>FECHA</th>
                     <th>ENTRADA</th>
                     <th>COMIDA</th>
@@ -25,7 +25,7 @@
 
             @foreach ($usuarios as $user)
             
-                <td>{{$user->name}}</td>
+                <td>{{$user->usuario}}</td>
                     
             @endforeach
 

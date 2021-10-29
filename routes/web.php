@@ -21,7 +21,7 @@ use App\Http\Controllers\AreaController;
 }); */
 
 
-Route::get('/areas', [AreaController::class, 'index']);
+Route::resource('/areas', AreaController::class);
 
 Route::view('/login', 'login')->name('login')->middleware('guest');
 

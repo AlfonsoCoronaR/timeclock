@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Area;
 use Illuminate\Http\Request;
 
 class AreaController extends Controller
@@ -14,7 +15,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        return view('formularios.areas');
+        $areas = Area::all();
+        return view('tablas.areasT')->with(['areas'=>$areas]);
     }
 
     /**
@@ -24,7 +26,7 @@ class AreaController extends Controller
      */
     public function create()
     {
-        //
+        return view('formularios.areas');
     }
 
     /**

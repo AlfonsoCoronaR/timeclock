@@ -67,7 +67,7 @@
     </ul>
   </div>
   <section class="home-section">
-      <div class="text">@yield('registro')</div>
+      @yield('registro')
   </section>
   <script>
   let sidebar = document.querySelector(".sidebar");

@@ -42,11 +42,30 @@ body {
 
 .card {
   max-width: 800px;
+  box-shadow: 20px 20px;
 }
 
 .home-section {
   background-color: #E4E9F7; 
 }
+
+.img-area {
+  background: rgb(218, 139, 165);
+}
+
+.img-group {
+  background: burlywood;
+}
+
+.img-user {
+  background: rgb(138, 226, 192);
+}
+
+/* .table-area {
+  margin-top: auto;
+} */
+
+
 
 /* Contenido de la barra */
 
