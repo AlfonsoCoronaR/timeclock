@@ -16,49 +16,77 @@
                               <h3 class="card-title text-center">CREAR UN NUEVO USUARIO</h3>
 
                               <div class="card-body">
-                                <form method="POST" {{-- action="{{url('/principal')}}" --}}>
+                                <form method="POST" action="{{url('/usuarios')}}">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="usuarios" class="usuario form-label">Nombre: </label>
-                                        <input type="text" name="usuarios" placeholder="Nombre completo..." 
-                                                class="form-control" {{-- value="{{old('email')}}" --}} required autofocus>
-                                        {{-- @error('email') 
-                                            <small style="color: red">
-                                                {{$message}}</small>
-                                        @enderror --}}
+                                        <label for="name" class="usuario form-label">Nombre: </label>
+                                        <input type="text" name="name" placeholder="Nombre completo..." class="form-control" autofocus>
+                                        @error('name') 
+                                        <div class="error">
+                                            <small>
+                                                {{$message}}
+                                            </small>
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="email" class="usuario form-label">Usuario: </label>
-                                        <input type="text" name="email" placeholder="Nombre del usuario..." 
-                                                class="form-control" {{-- value="{{old('email')}}" --}} required autofocus>
-                                        {{-- @error('email') 
-                                            <small style="color: red">
-                                                {{$message}}</small>
-                                        @enderror --}}
+                                        <label for="user" class="usuario form-label">Usuario: </label>
+                                        <input type="text" name="user" placeholder="Nombre del usuario..." class="form-control" autofocus>
+                                        @error('user') 
+                                        <div class="error">
+                                            <small>
+                                                {{$message}}
+                                            </small>
+                                        </div>
+                                        @enderror
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="grupo" class="usuario form-label">Seleccionar grupo:</label>
+                                        <select name="grupo" class="form-select" aria-label="Default select example">
+                                          <option value="" selected>Selecciona un grupo</option>
+                                          @foreach ($grupos as $grupo)
+                                            <option value="{{$grupo->id}}">{{$grupo->grupo}}</option>
+                                          @endforeach
+                                        </select>
+                                        @error('grupo') 
+                                        <div class="error">
+                                          <small>
+                                              {{$message}}
+                                          </small>
+                                        </div>
+                                        @enderror
+                                      </div>
                                     <div class="mb-3">
                                         <label for="email" class="usuario form-label">Correo Electrónico:</label>
-                                        <input type="text" name="email" placeholder="Correo electrónico..." 
-                                                class="form-control" {{-- value="{{old('email')}}" --}} required autofocus>
-                                        {{-- @error('email') 
-                                            <small style="color: red">
-                                                {{$message}}</small>
-                                        @enderror --}}
+                                        <input type="text" name="email" placeholder="Correo electrónico..." class="form-control" autofocus>
+                                        @error('email') 
+                                        <div class="error">
+                                            <small>
+                                                {{$message}}
+                                            </small>
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="password" class="usuario form-label"> Contraseña: </label>
-                                        <input type="password" name="password" placeholder="Contraseña..." class="form-control" required>
-                                       {{--  @error('password') 
-                                            <small style="color: red">
-                                                {{$message}}</small>
-                                        @enderror --}}
+                                        <input type="password" name="password" placeholder="Contraseña..." class="form-control">
+                                        @error('password') 
+                                        <div class="error">
+                                            <small>
+                                                {{$message}}
+                                            </small>
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="password" class="usuario form-label"> Confirmar contraseña: </label>
-                                        <input type="password" name="password" placeholder="Escribe de nuevo la contraseña..." class="form-control" required>
-                                       {{--  @error('password') 
-                                            <small style="color: red">
-                                                {{$message}}</small>
+                                        <label for="password_confirmation" class="usuario form-label"> Confirmar contraseña: </label>
+                                        <input type="password" name="password_confirmation" placeholder="Escribe de nuevo la contraseña..." class="form-control">
+                                        {{-- @error('password') 
+                                        <div class="error">
+                                            <small>
+                                                {{$message}}
+                                            </small>
+                                        </div>
                                         @enderror --}}
                                     </div>
                                     <div class="boton text-center">

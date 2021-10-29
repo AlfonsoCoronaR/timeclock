@@ -20,9 +20,16 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label for="area" class="area form-label">Nueva área: </label>
-                                        <input type="text" name="area" placeholder="Nombre del área..." 
-                                                class="form-control" required autofocus>
+                                        <input type="text" name="area" placeholder="Nombre del área..." class="form-control" autofocus>
+                                        @error('area') 
+                                        <div class="error">
+                                          <small>
+                                              {{$message}}
+                                          </small>
+                                      </div>
+                                        @enderror
                                     </div>
+                                    
                                     <div class="boton text-center">
                                         <input type="submit" value="Guardar" class="btn btn-dark">
                                     </div> 

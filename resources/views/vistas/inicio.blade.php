@@ -3,7 +3,7 @@
     @extends('../extras.sidebar')
         @section('registro')
         
-        <table class="table table-striped table-bordered border-dark table-info">
+        <table class="table table-striped table-bordered border-white table-dark">
             <h1>Registro de usuarios:</h1>
             
             <thead>

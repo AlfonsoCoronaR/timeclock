@@ -25,7 +25,6 @@ class User extends Authenticatable
         'usuario',
         'password',
         'email',
-        'comentario',
         'tipo_usuario',
         'ip',
         'disable',
@@ -44,6 +43,12 @@ class User extends Authenticatable
 
     protected $casts = [
         'datetime' => 'datetime',
+    ];
+
+    protected $attributes = [
+        'tipo_usuario' => 0,
+        'ip' => '127.0.0.1',
+        'disable' => 0,
     ];
 
     /**

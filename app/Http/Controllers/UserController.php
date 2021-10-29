@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Grupo;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -27,7 +29,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('formularios.usuarios');
+        $grupos = Grupo::all();
+
+        return view('formularios.usuarios')->with(['grupos'=>$grupos]);
     }
 
     /**
@@ -38,7 +42,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'user' => 'required',
+            'email' => 'required | email | unique:users',
+            'grupo' => 'required',
+            'password' => 'required | confirmed',
+            'password_confirmation' => 'required',
+        ]);
+
+        $usuarios = new User();
+
+        $usuarios->name = $request->get('name');
+        $usuarios->usuario = $request->get('user');
+        $usuarios->email = $request->get('email');
+        $usuarios->id_grupo = $request->get('gurpo');
+        $usuarios->password = Hash::make($request->password);
     }
 
     /**

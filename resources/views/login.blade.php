@@ -17,21 +17,28 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="email" class="form-label"> Correo Electrónico: </label>
-                                <input type="text" name="email" placeholder="Correo electrónico..." 
-                                        class="form-control" value="{{old('email')}}" required autofocus>
+                                <input type="text" name="email" placeholder="Correo electrónico..." class="form-control" value="{{old('email')}}" autofocus>
                                 @error('email') 
-                                    <small style="color: red">
-                                        {{$message}}</small>
+                                    <div class="error">
+                                        <small>
+                                            {{$message}}
+                                        </small>
+                                    </div>
                                 @enderror
                             </div>
+                            
                             <div class="mb-3">
                                 <label for="password" class="form-label"> Contraseña: </label>
-                                <input type="password" name="password" placeholder="Contraseña..." class="form-control" required>
+                                <input type="password" name="password" placeholder="Contraseña..." class="form-control">
                                 @error('password') 
-                                    <small style="color: red">
-                                        {{$message}}</small>
+                                <div class="error">
+                                    <small>
+                                        {{$message}}
+                                    </small>
+                                </div>
                                 @enderror
                             </div>
+
                             <div class="boton text-center">
                                 <input type="submit" value="Entrar" class="btn btn-outline-dark">
                             </div> 

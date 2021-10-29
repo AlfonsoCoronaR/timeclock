@@ -65,6 +65,14 @@ body {
   margin-left: 0;
 }
 
+.error {
+  margin-top: 8px;
+  border-radius: 10px;
+  text-align: center;
+  background: red;
+  color: white;
+}
+
 
 
 /* Contenido de la barra */

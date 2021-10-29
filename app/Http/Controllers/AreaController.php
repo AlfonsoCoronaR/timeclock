@@ -37,6 +37,10 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'area' => 'required',
+        ]);
+        
         $areas = new Area();
 
         $areas->area = $request->get('area');

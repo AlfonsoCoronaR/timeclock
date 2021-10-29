@@ -20,9 +20,32 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label for="grupo" class="grupo form-label">Nuevo grupo </label>
-                                        <input type="text" name="grupo" placeholder="Nombre del grupo..." 
-                                                class="form-control" required autofocus>
+                                        <input type="text" name="grupo" placeholder="Nombre del grupo..." class="form-control" autofocus>
+                                        @error('grupo')
+                                        <div class="error">
+                                          <small>
+                                              {{$message}}
+                                          </small>
+                                      </div>
+                                        @enderror
                                     </div>
+
+                                    <div class="mb-3">
+                                      <select name="area" class="form-select" aria-label="Default select example">
+                                        <option value="" selected>Selecciona una área</option>
+                                        @foreach ($areas as $area)
+                                          <option value="{{$area->id}}">{{$area->area}}</option>
+                                        @endforeach
+                                      </select>
+                                      @error('area') 
+                                      <div class="error">
+                                        <small>
+                                            {{$message}}
+                                        </small>
+                                      </div>
+                                      @enderror
+                                    </div>
+
                                     <div class="boton text-center">
                                         <input type="submit" value="Guardar" class="btn btn-dark">
                                     </div> 

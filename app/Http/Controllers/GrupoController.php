@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Grupo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Area;
 
 class GrupoController extends Controller
 {
@@ -27,7 +29,9 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        return view('formularios.grupos');
+        $areas = Area::all();
+
+        return view('formularios.grupos')->with(['areas'=>$areas]);
     }
 
     /**
@@ -38,7 +42,19 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'grupo' => 'required',
+            'area' => 'required',
+        ]);
+
+        $grupos = new Grupo();
+
+        $grupos->grupo = $request->get('grupo');
+        $grupos->id_area = $request->get('area');
+        
+        $grupos->save();
+
+        return redirect()->to('/grupos');
     }
 
     /**
