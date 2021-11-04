@@ -1,39 +1,40 @@
 <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxs-watch icon'></i>
-        <div class="logo_name">GESDES</div>
+        <div class="titulo-informe logo_name">GESDES</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
+
       <li>
         <a href="{{url('/registros')}}">
           <i class='bx bx-line-chart'></i>
           <span class="links_name">Registros</span>
         </a>
-         <span class="tooltip">Registros</span>
+        <span class="tooltip">Registros</span>
       </li>
       <li>
-       <a href="{{url('/areas')}}">
-         <i class='bx bx-git-compare'></i>
-         <span class="links_name">Áreas</span>
-       </a>
-       <span class="tooltip">Áreas</span>
-     </li>
-     <li>
-       <a href="{{url('/grupos')}}">
-         <i class='bx bx-group'></i>
-         <span class="links_name">Grupos</span>
-       </a>
-       <span class="tooltip">Grupos</span>
-     </li>
+        <a href="{{url('/areas')}}">
+          <i class='bx bx-git-compare'></i>
+          <span class="links_name">Áreas</span>
+        </a>
+        <span class="tooltip">Áreas</span>
+      </li>
       <li>
-       <a href="{{url('/usuarios/create')}}">
-         <i class='bx bx-user' ></i>
-         <span class="links_name">Crear Usuarios</span>
-       </a>
-       <span class="tooltip">Crear Usuarios</span>
-     </li>
-     <li>
+        <a href="{{url('/grupos')}}">
+          <i class='bx bx-group'></i>
+          <span class="links_name">Grupos</span>
+        </a>
+        <span class="tooltip">Grupos</span>
+      </li>
+      <li>
+        <a href="{{url('/usuarios/create')}}">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Crear Usuarios</span>
+        </a>
+        <span class="tooltip">Crear Usuarios</span>
+      </li>
+      <li>
       <a href="{{url('/usuarios')}}">
         <i class='bx bx-face'></i>
         <span class="links_name">Administrar Usuarios</span>
@@ -41,19 +42,20 @@
       <span class="tooltip">Administrar Usuarios</span>
     </li>
     <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Mesnsajes</span>
-       </a>
-       <span class="tooltip">Mensajes</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Herramientas</span>
-       </a>
-       <span class="tooltip">Herramientas</span>
-     </li>
+        <a href="#">
+          <i class='bx bx-chat' ></i>
+          <span class="links_name">Mensajes</span>
+        </a>
+        <span class="tooltip">Mensajes</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="links_name">Herramientas</span>
+        </a>
+        <span class="tooltip">Herramientas</span>
+      </li>
+
      <li class="profile">
        <form action="{{url('/salir')}}" method="POST">
         @csrf

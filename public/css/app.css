@@ -1,6 +1,9 @@
 body {
-    background-color: #1d1b31;
+    /* background-color: #1d1b31; */
     /* overflow: hidden; */
+    background: #536976;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     overflow-x: hidden;
 }
 
@@ -11,6 +14,8 @@ body {
 .card {
   color: #11101D;
   background-color: rgb(253, 249, 249);
+  max-width: 800px;
+  box-shadow: 20px 20px;
 }
 
 .boton {
@@ -21,6 +26,7 @@ body {
   height: 100px;
   width: auto;
   border-radius: 15%;
+  box-shadow: 20px 20px black;
 }
 
 .plantilla {
@@ -40,25 +46,30 @@ body {
   margin-left: 300px;
 }
 
-.card {
-  max-width: 800px;
-  box-shadow: 20px 20px;
-}
 
 .home-section {
   background-color: #E4E9F7; 
 }
 
 .img-area {
-  background: rgb(218, 139, 165);
+  /* background: rgb(218, 139, 165); */
+  background: #ddd6f3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #faaca8, #ddd6f3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #faaca8, #ddd6f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .img-group {
-  background: burlywood;
+  /* background: burlywood; */
+  background: #ffe259;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .img-user {
-  background: rgb(138, 226, 192);
+  /* background: rgb(138, 226, 192); */
+  background: #4AC29A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #BDFFF3, #4AC29A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #BDFFF3, #4AC29A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .table-user {
@@ -69,9 +80,24 @@ body {
   margin-top: 8px;
   border-radius: 10px;
   text-align: center;
-  background: red;
+  /* background: rgba(255, 0, 0, 0.836); */
+  background: #333333;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #dd1818, #333333);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #dd1818, #333333); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
+
+.fondo-boton {
+  background: #36D1DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+
+.titulo-informe {
+  font-family: 'Pacifico', cursive;
+}
+
 
 
 
@@ -91,7 +117,10 @@ body {
   top: 0;
   height: 100%;
   width: 78px;
-  background: #11101D;
+  /* background: #11101D; */
+  background: #16222A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;

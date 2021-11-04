@@ -18,9 +18,9 @@
                               <div class="card-body">
                                 <form method="POST" action="{{url('/grupos')}}">
                                     @csrf
-                                    <div class="mb-3">
-                                        <label for="grupo" class="grupo form-label">Nuevo grupo </label>
-                                        <input type="text" name="grupo" placeholder="Nombre del grupo..." class="form-control" autofocus>
+                                    <div class="form-floating mb-3">
+                                      <input type="text" name="grupo" placeholder="Nombre del grupo..." class="form-control" autofocus>
+                                      <label for="grupo" class="grupo form-label">Nuevo grupo:</label>
                                         @error('grupo')
                                         <div class="error">
                                           <small>

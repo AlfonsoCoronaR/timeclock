@@ -49,6 +49,7 @@ class User extends Authenticatable
         'tipo_usuario' => 0,
         'ip' => '127.0.0.1',
         'disable' => 0,
+        'id_status' => 1,
     ];
 
     /**

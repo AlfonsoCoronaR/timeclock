@@ -3,23 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Grupo;
+use App\Models\Registro;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
+use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 
-class UserController extends Controller
+
+class AccessController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $usuarios = User::all();
+        $registros = Registro::all();
 
-        return view('tablas.usuariosT')->with(['usuarios'=>$usuarios]);
+        return view('vistas.user')->with(['usuarios' => $usuarios, 'registros' => $registros]);
+
     }
 
     /**
@@ -29,9 +33,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $grupos = Grupo::all();
-
-        return view('formularios.usuarios')->with(['grupos'=>$grupos]);
+        //
     }
 
     /**
@@ -42,26 +44,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'user' => 'required',
-            'email' => 'required | email | unique:users',
-            'grupo' => 'required',
-            'password' => 'required | confirmed',
-            'password_confirmation' => 'required',
-        ]);
+        /* $fecha = Carbon::now();
 
-        $usuarios = new User();
+        $registro = new Registro();
 
-        $usuarios->name = $request->get('name');
-        $usuarios->usuario = $request->get('user');
-        $usuarios->email = $request->get('email');
-        $usuarios->id_grupo = $request->get('grupo');
-        $usuarios->password = Hash::make($request->password);
+        $registro->fecha = now();
+        $registro->entrada = $fecha;
+        $registro->comida = $fecha;
+        $registro->id_usuario = auth()->id();
 
-        $usuarios->save();
+        $registro->save();
 
-        return redirect()->to('/usuarios');
+        return redirect()->to('/usuario'); */
     }
 
     /**

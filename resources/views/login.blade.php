@@ -15,9 +15,9 @@
                     <div class="card-body">
                         <form method="POST" action="{{url('/principal')}}">
                             @csrf
-                            <div class="mb-3">
-                                <label for="email" class="form-label"> Correo Electrónico: </label>
+                            <div class="form-floating mb-3">
                                 <input type="text" name="email" placeholder="Correo electrónico..." class="form-control" value="{{old('email')}}" autofocus>
+                                <label for="email" class="form-label"> Correo Electrónico: </label>
                                 @error('email') 
                                     <div class="error">
                                         <small>
@@ -27,9 +27,9 @@
                                 @enderror
                             </div>
                             
-                            <div class="mb-3">
-                                <label for="password" class="form-label"> Contraseña: </label>
+                            <div class="form-floating mb-3">
                                 <input type="password" name="password" placeholder="Contraseña..." class="form-control">
+                                <label for="password" class="form-label"> Contraseña: </label>
                                 @error('password') 
                                 <div class="error">
                                     <small>

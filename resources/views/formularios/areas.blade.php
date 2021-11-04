@@ -18,9 +18,9 @@
                               <div class="card-body">
                                 <form method="POST" action="{{url('/areas')}}">
                                     @csrf
-                                    <div class="mb-3">
-                                        <label for="area" class="area form-label">Nueva área: </label>
-                                        <input type="text" name="area" placeholder="Nombre del área..." class="form-control" autofocus>
+                                    <div class="form-floating mb-3">
+                                      <input type="text" name="area" placeholder="Nombre del área..." class="form-control" autofocus>
+                                      <label for="area" class="area form-label">Nueva área: </label>
                                         @error('area') 
                                         <div class="error">
                                           <small>

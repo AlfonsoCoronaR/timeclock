@@ -7,7 +7,7 @@
             <div class="table-user row justify-content-center">
                 <div class="col-lg-10 mt-4 text-center">
 
-                    <h1 class="mb-4">Registro de usuarios:</h1>
+                    <h1 class="titulo-informe mb-4">Registro de usuarios:</h1>
 
                     <table class="table table-striped table-bordered border-white table-dark text-center">
  

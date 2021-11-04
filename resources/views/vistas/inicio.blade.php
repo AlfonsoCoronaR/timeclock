@@ -3,8 +3,10 @@
     @extends('../extras.sidebar')
         @section('registro')
         
+        <h1 class="titulo-informe mb-4">Registro de usuarios:</h1>
+
         <table class="table table-striped table-bordered border-white table-dark">
-            <h1>Registro de usuarios:</h1>
+            
             
             <thead>
                 <tr>

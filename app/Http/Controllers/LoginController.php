@@ -27,7 +27,7 @@ class LoginController extends Controller
             return $redirect->to('/registros');
         }
         return back()->withErrors([
-            'email' => 'El correo o la contraseña no son correctas.',
+            'email' => 'El correo o la contraseña no son correctos.',
         ]);
     }
 

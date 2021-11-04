@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row justify-content-end">
                 <div class="button mt-4 col-lg-2 col-sm-4">
-                    <a class="btn btn-info" href="areas/create">
+                    <a class="fondo-boton btn btn-info" href="areas/create">
                         <img src="{{url('img/flecha.png')}}" alt="flecha.png" style="height: 25px">
                         Crear área
                     </a>
@@ -16,7 +16,7 @@
             <div class="table-area row justify-content-center">
                 <div class="col-lg-6 mt-4 text-center">
 
-                    <h1 class="mb-4">Registro de áreas:</h1>
+                    <h1 class="titulo-informe mb-4">Registro de áreas:</h1>
 
                     <table class="table table-striped table-bordered border-white table-dark text-center">
  

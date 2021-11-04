@@ -13,11 +13,13 @@ class Registro extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
+        'fecha',
         'entrada',
         'comida',
         'comida_regreso',
         'salida',
         'vacaciones',
+        'fin_vacaciones',
         'enfermedad',
         'id_usuario',
     ];
