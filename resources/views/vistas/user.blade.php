@@ -28,10 +28,10 @@
                     <tr>
                         <td></td>
                         <td>
-                            <form method="POST" action="{{url('/usuario_entrada')}}">
+                            <form method="POST" action="{{url('/usuario_entrada')}}" name="miformulario">
                                 @csrf
                                 <input type="hidden" id="entrada">
-                                <input type="submit" value="entrar">
+                                <input type="submit" name="btnEnviar" value="entrar" class="btn btn-primary btn-lg">
                                 {{-- <button type="button" class="btn btn-primary btn-lg"><i class="fas fa-door-open"></i></button> --}}
                             </form>
                         </td>
@@ -104,5 +104,23 @@
             </div>
         </div>
     </div>
+    <script>
+
+        function confirmEnviar() {
+            miformulario.btnEnviar.disabled = true; 
+            miformulario.btnEnviar.value = "Enviado...";
+            setTimeout(function(){
+                miformulario.btnEnviar.disabled = false;
+                miformulario.btnEnviar.value = "Entrar";
+            }, 10000);
+                return false;
+        }
+
+        miformulario.btnEnviar.addEventListener("change", function(){ 
+            return confirmEnviar();
+        }, false);
+
+    </script>
+    
     @endsection
 @endsection

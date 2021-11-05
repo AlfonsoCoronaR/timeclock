@@ -23,6 +23,7 @@ class CreateRegistrosTable extends Migration
             $table->date('vacaciones')->nullable();
             $table->date('fin_vacaciones')->nullable();
             $table->date('enfermedad')->nullable();
+            $table->string('ip');
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
             $table->timestamps();

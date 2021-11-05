@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Registro;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 
@@ -19,10 +20,24 @@ class AccessController extends Controller
      */
     public function index(Request $request)
     {
-        $usuarios = User::all();
-        $registros = Registro::all();
+        $fecha = now();
+        $fecha->format('Y-m-d');
 
-        return view('vistas.user')->with(['usuarios' => $usuarios, 'registros' => $registros]);
+        /* var_dump($fecha); */
+
+        $id_usuario = auth()->id();
+        
+        $tabla = DB::table('registros')
+                    ->select('*')
+                    ->where('id_usuario', $id_usuario)
+                    ->whereDate('fecha', $fecha)
+                    ->get();
+
+
+        /* $ip = $request->ip();
+        dd($ip); */
+
+        return view('vistas.user')->with(['registros' => $tabla]);
 
     }
 
