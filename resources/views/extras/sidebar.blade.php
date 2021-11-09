@@ -44,16 +44,9 @@
     <li>
         <a href="#">
           <i class='bx bx-chat' ></i>
-          <span class="links_name">Mensajes</span>
+          <span class="links_name">Notificaciones</span>
         </a>
-        <span class="tooltip">Mensajes</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="links_name">Herramientas</span>
-        </a>
-        <span class="tooltip">Herramientas</span>
+        <span class="tooltip">Notificaciones</span>
       </li>
 
      <li class="profile">

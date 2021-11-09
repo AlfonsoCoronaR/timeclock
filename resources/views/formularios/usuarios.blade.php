@@ -6,7 +6,7 @@
         <div class="container ml-5">
             <div class="vh-100 row justify-content-center align-items-center">
                 <div class="usuarios mt-4">
-                    <div class="card" >
+                    <div class="card form" >
                         <div class="row g-0">
                           <div class="img-user col-md-4">
                             <img src="{{url('img/user.png')}}" class="img-fluid rounded-start" alt="usuarios.png">

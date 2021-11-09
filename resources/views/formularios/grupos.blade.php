@@ -6,7 +6,7 @@
         <div class="container ml-5">
             <div class="vh-100 row justify-content-center align-items-center">
                 <div class="plantilla">
-                    <div class="card mb-3">
+                    <div class="card form mb-3">
                         <div class="row g-0">
                           <div class="img-group col-md-4">
                             <img src="{{url('img/grupo.png')}}" class="img-fluid rounded-start" alt="grupos.png">

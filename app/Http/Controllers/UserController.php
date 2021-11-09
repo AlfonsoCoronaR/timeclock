@@ -7,6 +7,7 @@ use App\Models\Grupo;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -17,7 +18,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
+        $usuarios = DB::table('grupos')->join('users', 'users.id_grupo', 'grupos.id')
+                                        ->select('*')
+                                        ->get();
 
         return view('tablas.usuariosT')->with(['usuarios'=>$usuarios]);
     }

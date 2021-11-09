@@ -33,7 +33,7 @@
                             <td>{{$user->name}}</td>
                             <td>{{$user->usuario}}</td>
                             <td>{{$user->email}}</td>
-                            <td>{{$user->id_grupo}}</td>
+                            <td>{{$user->grupo}}</td>
                             <td>{{$user->created_at}}</td>
 
                             <td><button type="button" class="btn btn-warning btn-sm">Editar</button></td>

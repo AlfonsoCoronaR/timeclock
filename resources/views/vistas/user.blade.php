@@ -2,6 +2,7 @@
 @section('contenido')
     @extends('../extras/user_sidebar')
     @section('registro')
+
     <div class="container">
         <div class="table-user row justify-content-center">
             <div class="col-lg-11 mt-4 text-center">
@@ -30,57 +31,51 @@
                         <td>
                             <form method="POST" action="{{url('/usuario_entrada')}}" name="miformulario">
                                 @csrf
+                                
                                 <input type="hidden" id="entrada">
-                                <input type="submit" name="btnEnviar" value="entrar" class="btn btn-primary btn-lg">
-                                {{-- <button type="button" class="btn btn-primary btn-lg"><i class="fas fa-door-open"></i></button> --}}
+                                <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-door-open" ></i></button>
                             </form>
                         </td>
                         <td>
                             <form method="POST" action="{{url('/usuario_comida')}}">
                                 @csrf
                                 <input type="hidden" id="comida">
-                                <input type="submit" value="comida">
-                                {{-- <button type="button" class="btn btn-success btn-lg"><i class="fas fa-utensils"></i></button> --}}
+                                <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-utensils"></i></button>
                             </form>
                         </td>
                         <td>
                             <form method="POST" action="{{url('/usuario_regreso')}}">
                                 @csrf
                                 <input type="hidden" id="regreso">
-                                <input type="submit" value="regreso">
-                                {{-- <button type="button" class="btn btn-danger btn-lg"><i class="fas fa-undo-alt"></i></button> --}}
+                                <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-undo-alt"></i></button>
                             </form>
                         </td>
                         <td>
                             <form method="POST" action="{{url('/usuario_salida')}}">
                                 @csrf
                                 <input type="hidden" id="salida">
-                                <input type="submit" value="salida">
-                                {{-- <button type="button" class="btn btn-warning btn-lg"><i class="fas fa-door-closed"></i></button> --}}
+                                <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-door-closed"></i></button>
                             </form>
                         </td>
                         <td>
                             <form method="POST" action="{{url('/usuario_vacaciones')}}">
                                 @csrf
                                 <input type="hidden" id="vacaciones">
-                                <input type="submit" value="vacaciones">
-                                {{-- <button type="button" class="btn btn-info btn-lg"><i class="fas fa-plane-departure"></i></button> --}}
+                                <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-plane-departure"></i></button>
                             </form>
                         </td>
                         <td>
                             <form method="POST" action="{{url('/usuario_finvacaciones')}}">
                                 @csrf
                                 <input type="hidden" id="finvacaciones">
-                                <input type="submit" value="finvacaciones">
-                                {{-- <button type="button" class="btn btn-danger btn-lg"><i class="fas fa-plane-arrival"></i></button> --}}
+                                <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-plane-arrival"></i></button>
                             </form>
                         </td>
                         <td>
                             <form method="POST" action="{{url('/usuario_enfermedad')}}">
                                 @csrf
                                 <input type="hidden" id="enfermedad">
-                                <input type="submit" value="enfermedad">
-                                {{-- <button type="button" class="btn btn-light btn-lg"><i class="fas fa-head-side-cough"></i></button> --}}
+                                <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-head-side-cough"></i></button>
                             </form>
                         </td>
                     </tr>
@@ -106,7 +101,7 @@
     </div>
     <script>
 
-        function confirmEnviar() {
+        /* function confirmEnviar() {
             miformulario.btnEnviar.disabled = true; 
             miformulario.btnEnviar.value = "Enviado...";
             setTimeout(function(){
@@ -118,8 +113,21 @@
 
         miformulario.btnEnviar.addEventListener("change", function(){ 
             return confirmEnviar();
-        }, false);
+        }, false); */
 
+ function mensajeChange() {
+          console.log("change");
+          const mensaje = document.getElementById("mensaje");
+          const boton = document.getElementById("enviar");
+          console.log(boton)
+          
+          if (mensaje.value.trim() !== "") {
+            console.log("Se muestra")
+            boton.removeAttribute('disabled')
+          } else {
+            boton.setAttribute('disabled', "true");
+          }
+        }
     </script>
     
     @endsection

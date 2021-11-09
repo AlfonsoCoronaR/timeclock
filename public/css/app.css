@@ -11,7 +11,7 @@ body {
     color: #fff;
 }
 
-.card {
+.form {
   color: #11101D;
   background-color: rgb(253, 249, 249);
   max-width: 800px;
@@ -31,7 +31,7 @@ body {
 
 .plantilla {
   margin-left: 300px;
-  color: coral;
+  /* color: coral; */
   overflow: hidden;
 }
 
@@ -97,6 +97,30 @@ body {
 .titulo-informe {
   font-family: 'Pacifico', cursive;
 }
+
+.registros {
+  background: rgb(8, 8, 8);
+  color: white;
+}
+
+#registros {
+  font-size: small;
+  /* color: rgb(30, 122, 207); */
+}
+
+/* .table-striped>tbody>tr:nth-child(odd)>td, 
+      .table-striped>tbody>tr:nth-child(odd)>th {
+       background-color: #3A6073;
+       color: white;
+      }
+      .table-striped>tbody>tr:nth-child(even)>td, 
+      .table-striped>tbody>tr:nth-child(even)>th {
+       background-color: #536976;
+       color: white;
+      }
+      .table-striped>thead>tr>th {
+         background-color: white;
+      } */
 
 
 

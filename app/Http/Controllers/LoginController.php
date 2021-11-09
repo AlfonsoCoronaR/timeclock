@@ -8,6 +8,7 @@ use App\Models\Registro;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
@@ -32,11 +33,13 @@ class LoginController extends Controller
     }
 
     public function inicio(){
-        //dd('Estyo aki');
-        $registros = Registro::all();
-        $usuarios = User::all();
-        //dd($registros);
-        return view('vistas.inicio')->with(['registros'=>$registros, 'usuarios'=>$usuarios]);
+
+        $consultas = DB::table('users')->join('registros', 'registros.id_usuario', '=', 'users.id')
+                                      ->where('id_usuario', '<>', 1)
+                                      ->select('*')
+                                      ->get();
+
+        return view('vistas.inicio')->with(['consultas'=>$consultas]);
     }
 
     public function salir(Request $request, Redirector $redirect){

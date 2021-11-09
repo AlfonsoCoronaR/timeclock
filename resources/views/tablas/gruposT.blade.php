@@ -33,13 +33,13 @@
             
                         <tbody>
                             
-                        @foreach ($grupos as $grupo)
+                        @foreach ($areas as $areas)
                         <tr>
                             
-                            <td>{{$grupo->id}}</td>
-                            <td>{{$grupo->grupo}}</td>
-                            <td>{{$grupo->id_area}}</td>
-                            <td>{{$grupo->created_at}}</td>
+                            <td>{{$areas->id}}</td>
+                            <td>{{$areas->grupo}}</td>
+                            <td>{{$areas->area}}</td>
+                            <td>{{$areas->created_at}}</td>
 
                             <td><button type="button" class="btn btn-warning btn-sm">Editar</button></td>
                             <td><button type="button" class="btn btn-danger btn-sm">Eliminar</button></td>

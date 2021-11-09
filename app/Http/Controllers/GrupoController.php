@@ -17,9 +17,11 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        $grupos = Grupo::all();
+        $areas = DB::table('areas')->join('grupos', 'grupos.id_area', 'areas.id')
+                                    ->select('*')
+                                    ->get();
 
-        return view('tablas.gruposT')->with(['grupos'=>$grupos]);
+        return view('tablas.gruposT')->with(['areas'=>$areas]);
     }
 
     /**
@@ -31,7 +33,7 @@ class GrupoController extends Controller
     {
         $areas = Area::all();
 
-        return view('formularios.grupos')->with(['areas'=>$areas]);
+        return view('formularios.areas')->with(['areas'=>$areas]);
     }
 
     /**
