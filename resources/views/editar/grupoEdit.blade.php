@@ -13,14 +13,15 @@
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <h3 class="card-title text-center">CREAR UN NUEVO GRUPO</h3>
+                              <h3 class="card-title text-center">EDITAR GRUPO</h3>
 
                               <div class="card-body">
-                                <form method="POST" action="{{url('/grupos')}}">
+                                <form method="POST" action="/timeclock/public/grupos/{{$grupo->id}}">
                                     @csrf
+                                    @method('PUT')
                                     <div class="form-floating mb-3">
-                                      <input type="text" name="grupo" placeholder="Nombre del grupo..." class="form-control" autofocus>
-                                      <label for="grupo" class="grupo form-label">Nuevo grupo:</label>
+                                      <input type="text" name="grupo" placeholder="Nombre del grupo..." class="form-control" autofocus value="{{$grupo->grupo}}">
+                                      <label for="grupo" class="grupo form-label">Editar grupo:</label>
                                         @error('grupo')
                                         <div class="error">
                                           <small>
@@ -47,8 +48,8 @@
                                     </div>
 
                                     <div class="boton text-center">
-                                      <a href="{{url('/grupos')}}" class="btn btn-secondary">Cancelar</a>
-                                      <input type="submit" value="Guardar" class="btn btn-dark">
+                                        <a href="{{url('/grupos')}}" class="btn btn-secondary">Cancelar</a>
+                                        <input type="submit" value="Guardar" class="btn btn-dark">
                                     </div> 
                                 </form>
                             </div>

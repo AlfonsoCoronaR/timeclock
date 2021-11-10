@@ -23,8 +23,6 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('disable');
             $table->unsignedBigInteger('id_grupo');
             $table->foreign('id_grupo')->references('id')->on('grupos');
-            $table->unsignedBigInteger('id_status');
-            $table->foreign('id_status')->references('id')->on('status');
             $table->timestamps();
         });
     }

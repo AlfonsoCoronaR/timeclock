@@ -30,13 +30,6 @@
         
                                 <tbody>
                                     
-        
-                            {{--  @foreach ($usuarios as $user)
-                                
-                                    <td>{{$user->usuario}}</td>
-                                
-                                @endforeach --}}
-                                    
                                 @foreach ($consultas as $consulta)
                                 <tr>
                                     <td>{{$consulta->name}}</td>

@@ -13,13 +13,14 @@
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <h3 class="card-title text-center">CREAR UN NUEVO USUARIO</h3>
+                              <h3 class="card-title text-center">EDITAR USUARIO</h3>
 
                               <div class="card-body">
-                                <form method="POST" action="{{url('/usuarios')}}">
+                                <form method="POST" action="/timeclock/public/usuarios/{{$usuario->id}}">
                                     @csrf
+                                    @method('PUT')
                                     <div class="form-floating mb-3">
-                                        <input type="text" name="name" placeholder="Nombre completo..." class="form-control" autofocus>
+                                        <input type="text" name="name" placeholder="Nombre completo..." class="form-control" autofocus value="{{$usuario->name}}">
                                         <label for="name" class="usuario form-label">Nombre: </label>
                                         @error('name') 
                                         <div class="error">
@@ -30,7 +31,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" name="user" placeholder="Nombre del usuario..." class="form-control" autofocus>
+                                        <input type="text" name="user" placeholder="Nombre del usuario..." class="form-control" autofocus value="{{$usuario->usuario}}">
                                         <label for="user" class="usuario form-label">Usuario: </label>
                                         @error('user') 
                                         <div class="error">
@@ -41,7 +42,6 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        {{-- <label for="grupo" class="usuario form-label">Seleccionar grupo:</label> --}}
                                         <select name="grupo" class="form-select" aria-label="Default select example">
                                           <option value="" selected>Selecciona un grupo:</option>
                                           @foreach ($grupos as $grupo)
@@ -57,7 +57,7 @@
                                         @enderror
                                       </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" name="email" placeholder="Correo electrónico..." class="form-control" autofocus>
+                                        <input type="text" name="email" placeholder="Correo electrónico..." class="form-control" autofocus value="{{$usuario->email}}">
                                         <label for="email" class="usuario form-label">Correo Electrónico:</label>
                                         @error('email') 
                                         <div class="error">

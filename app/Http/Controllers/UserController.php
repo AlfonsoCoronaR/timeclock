@@ -19,6 +19,8 @@ class UserController extends Controller
     public function index()
     {
         $usuarios = DB::table('grupos')->join('users', 'users.id_grupo', 'grupos.id')
+                                        ->where('grupos.disable', '<>', 1)
+                                        ->where('users.disable', '<>', 1)
                                         ->select('*')
                                         ->get();
 
@@ -32,7 +34,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        $grupos = Grupo::all();
+        $grupos = DB::table('grupos')->where('id', '<>', 1)
+                                     ->where('disable', '<>', 1)
+                                     ->get();
 
         return view('formularios.usuarios')->with(['grupos'=>$grupos]);
     }
@@ -86,7 +90,13 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $usuario = User::find($id);
+
+        $grupos = DB::table('grupos')->where('disable', '<>', 1)
+                                     ->where('id', '<>', 1)
+                                     ->get();
+
+        return view('editar.usuarioEdit')->with(['usuario'=>$usuario, 'grupos'=>$grupos]);
     }
 
     /**
@@ -98,7 +108,27 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $usuario = User::find($id);
+
+        $this->validate($request, [
+            'name' => 'required',
+            'user' => 'required',
+            'email' => 'required | email',
+            'grupo' => 'required',
+            'password' => 'required | confirmed',
+            'password_confirmation' => 'required',
+        ]);
+
+        $usuario->name = $request->get('name');
+        $usuario->usuario = $request->get('user');
+        $usuario->email = $request->get('email');
+        $usuario->id_grupo = $request->get('grupo');
+        $usuario->password = Hash::make($request->password);
+
+        $usuario->save();
+
+        return redirect()->to('/usuarios');
+
     }
 
     /**

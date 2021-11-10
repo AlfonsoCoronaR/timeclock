@@ -20,6 +20,10 @@ class Area extends Model
         'datetime' => 'datetime',
     ];
 
+    protected $attributes = [
+        'disable' => 0,
+    ];
+
     public function Grupo() {
         return $this->hasMany(Grupo::class, 'id_area');
     }

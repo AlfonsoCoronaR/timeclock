@@ -21,11 +21,16 @@ class Registro extends Model
         'vacaciones',
         'fin_vacaciones',
         'enfermedad',
+        'ip',
         'id_usuario',
     ];
 
     protected $casts = [
         'datetime' => 'datetime',
+    ];
+
+    protected $attributes = [
+        'ip' => '127.0.0.1',
     ];
 
     public function User() {

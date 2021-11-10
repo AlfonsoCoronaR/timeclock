@@ -8,6 +8,7 @@ use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Http\Controllers\AccessController;
+use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\RegistroController;
 use App\Models\Registro;
 
@@ -56,5 +57,11 @@ Route::post('/usuario_vacaciones', [RegistroController::class, 'vacaciones']);
 Route::post('/usuario_finvacaciones', [RegistroController::class, 'finvacaciones']);
 
 Route::post('/usuario_enfermedad', [RegistroController::class, 'enfermedad']);
+
+Route::put('/eliminar_area/{id}', [DeleteController::class, 'areas']);
+
+Route::put('/eliminar_grupo/{id}', [DeleteController::class, 'grupos']);
+
+Route::put('/eliminar_usuario/{id}', [DeleteController::class, 'usuario']);
 
 

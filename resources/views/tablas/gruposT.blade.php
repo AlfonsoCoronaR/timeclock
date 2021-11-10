@@ -22,7 +22,6 @@
  
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>GRUPO</th>
                                 <th>ÁREA</th>
                                 <th>REGISTRO</th>
@@ -33,16 +32,20 @@
             
                         <tbody>
                             
-                        @foreach ($areas as $areas)
+                        @foreach ($grupos as $grupo)
                         <tr>
-                            
-                            <td>{{$areas->id}}</td>
-                            <td>{{$areas->grupo}}</td>
-                            <td>{{$areas->area}}</td>
-                            <td>{{$areas->created_at}}</td>
+                            <td>{{$grupo->grupo}}</td>
+                            <td>{{$grupo->area}}</td>
+                            <td>{{$grupo->created_at}}</td>
 
-                            <td><button type="button" class="btn btn-warning btn-sm">Editar</button></td>
-                            <td><button type="button" class="btn btn-danger btn-sm">Eliminar</button></td>
+                            <td><a href="/timeclock/public/grupos/{{$grupo->id}}/edit" class="btn btn-warning btn-sm">Editar</a></td>
+                            <td>
+                                <form action="/timeclock/public/eliminar_grupo/{{$grupo->id}}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                </form>
+                            </td>
                         </tr>
             
                         @endforeach

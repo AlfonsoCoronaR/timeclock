@@ -13,7 +13,6 @@
  
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>NOMBRE</th>
                                 <th>USUARIO</th>
                                 <th>CORREO ELECTRÓNICO</th>
@@ -28,16 +27,18 @@
                             
                         @foreach ($usuarios as $user)
                         <tr>
-                            
-                            <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->usuario}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->grupo}}</td>
                             <td>{{$user->created_at}}</td>
 
-                            <td><button type="button" class="btn btn-warning btn-sm">Editar</button></td>
-                            <td><button type="button" class="btn btn-danger btn-sm">Eliminar</button></td>
+                            <td><a href="/timeclock/public/usuarios/{{$user->id}}/edit" class="btn btn-warning btn-sm">Editar</a></td>
+                            <td><form action="/timeclock/public/eliminar_usuario/{{$user->id}}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form></td>
                         </tr>
             
                         @endforeach

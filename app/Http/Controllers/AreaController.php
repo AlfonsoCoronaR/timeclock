@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Area;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AreaController extends Controller
 {
@@ -15,7 +16,10 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $areas = Area::all();
+        $areas = DB::table('areas')->where('id', '<>', 1)
+                                    ->where('disable', '<>', 1)
+                                    ->get();
+
         return view('tablas.areasT')->with(['areas'=>$areas]);
     }
 
@@ -69,7 +73,9 @@ class AreaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $area = Area::find($id);
+
+        return view('editar.areaEdit')->with(['area'=>$area]);
     }
 
     /**
@@ -81,7 +87,18 @@ class AreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $area = Area::find($id);
+
+        $this->validate($request, [
+            'area' => 'required',
+        ]);
+
+        $area->area = $request->get('area');
+
+        $area->save();
+
+        return redirect()->to('/areas');
+
     }
 
     /**
@@ -95,3 +112,6 @@ class AreaController extends Controller
         //
     }
 }
+
+
+

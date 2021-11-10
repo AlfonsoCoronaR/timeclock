@@ -22,7 +22,6 @@
  
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>ÁREA</th>
                                 <th>REGISTRO</th>
                                 <th>EDITAR</th>
@@ -34,13 +33,17 @@
                             
                         @foreach ($areas as $area)
                         <tr>
-                            
-                            <td>{{$area->id}}</td>
                             <td>{{$area->area}}</td>
                             <td>{{$area->created_at}}</td>
 
-                            <td><button type="button" class="btn btn-warning btn-sm">Editar</button></td>
-                            <td><button type="button" class="btn btn-danger btn-sm">Eliminar</button></td>
+                            <td><a href="/timeclock/public/areas/{{$area->id}}/edit" class="btn btn-warning btn-sm">Editar</a></td>
+                            <td>
+                                <form action="/timeclock/public/eliminar_area/{{$area->id}}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                </form>
+                            </td>
                         </tr>
             
                         @endforeach

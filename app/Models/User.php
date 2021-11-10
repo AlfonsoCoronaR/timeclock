@@ -26,10 +26,8 @@ class User extends Authenticatable
         'password',
         'email',
         'tipo_usuario',
-        'ip',
         'disable',
         'id_grupo',
-        'id_status',
     ];
 
     /**
@@ -47,9 +45,7 @@ class User extends Authenticatable
 
     protected $attributes = [
         'tipo_usuario' => 0,
-        'ip' => '127.0.0.1',
         'disable' => 0,
-        'id_status' => 1,
     ];
 
     /**
@@ -57,10 +53,6 @@ class User extends Authenticatable
      *
      * @var array
      */
-
-     public function Status() {
-         return $this->belongsTo(Status::class, 'id_status');
-     }
 
      public function Grupo() {
          return $this->belongsTo(Grupo::class, 'id_grupo');

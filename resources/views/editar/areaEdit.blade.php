@@ -13,14 +13,15 @@
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <h3 class="card-title text-center">CREAR UNA NUEVA ÁREA</h3>
+                              <h3 class="card-title text-center">EDITAR ÁREA</h3>
 
                               <div class="card-body">
-                                <form method="POST" action="{{url('/areas')}}">
+                                <form method="POST" action="/timeclock/public/areas/{{$area->id}}">
                                     @csrf
+                                    @method('PUT')
                                     <div class="form-floating mb-3">
-                                      <input type="text" name="area" placeholder="Nombre del área..." class="form-control" autofocus>
-                                      <label for="area" class="area form-label">Nueva área: </label>
+                                      <input type="text" name="area" placeholder="Nombre del área..." class="form-control" autofocus value="{{$area->area}}">
+                                      <label for="area" class="area form-label">Editar área: </label>
                                         @error('area') 
                                         <div class="error">
                                           <small>
@@ -29,7 +30,7 @@
                                       </div>
                                         @enderror
                                     </div>
-                                    
+
                                     <div class="boton text-center">
                                         <a href="{{url('/areas')}}" class="btn btn-secondary">Cancelar</a>
                                         <input type="submit" value="Guardar" class="btn btn-dark">

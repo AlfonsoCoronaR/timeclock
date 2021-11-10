@@ -17,11 +17,13 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        $areas = DB::table('areas')->join('grupos', 'grupos.id_area', 'areas.id')
+        $grupos = DB::table('areas')->join('grupos', 'grupos.id_area', 'areas.id')
+                                    ->where('areas.id', '<>', 1)
+                                    ->where('grupos.disable', '<>', 1)
                                     ->select('*')
                                     ->get();
 
-        return view('tablas.gruposT')->with(['areas'=>$areas]);
+        return view('tablas.gruposT')->with(['grupos'=>$grupos]);
     }
 
     /**
@@ -31,9 +33,11 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        $areas = Area::all();
+        $areas = DB::table('areas')->where('id', '<>', 1)
+                                    ->where('disable', '<>', 1)
+                                    ->get();
 
-        return view('formularios.areas')->with(['areas'=>$areas]);
+        return view('formularios.grupos')->with(['areas'=>$areas]);
     }
 
     /**
@@ -78,7 +82,13 @@ class GrupoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $grupo = Grupo::find($id);
+
+        $areas = DB::table('areas')->where('id', '<>', 1)
+                                    ->where('disable', '<>', 1)
+                                    ->get();
+
+        return view('editar.grupoEdit')->with(['grupo'=>$grupo, 'areas'=>$areas]);
     }
 
     /**
@@ -90,7 +100,19 @@ class GrupoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $grupo = Grupo::find($id);
+
+        $this->validate($request, [
+            'grupo' => 'required',
+            'area' => 'required',
+        ]);
+
+        $grupo->grupo = $request->get('grupo');
+        $grupo->id_area = $request->get('area');
+
+        $grupo->save();
+
+        return redirect()->to('/grupos');
     }
 
     /**

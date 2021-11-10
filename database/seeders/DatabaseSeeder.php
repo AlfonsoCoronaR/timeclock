@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        Status::factory(1)->create();
         Area::factory(1)->create();
         Grupo::factory(1)->create();
         User::factory(1)->create();

@@ -21,6 +21,10 @@ class Grupo extends Model
         'datetime' => 'datetime',
     ];
 
+    protected $attributes = [
+        'disable' => 0,
+    ];
+
     public function Area() {
         return $this->belongsTo(Area::class, 'id_area');
     }
