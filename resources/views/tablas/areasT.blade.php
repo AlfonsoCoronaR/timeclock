@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="table-area row justify-content-center">
-                <div class="col-lg-6 mt-4 text-center">
+                <div class="col-lg-5 mt-4 text-center">
 
                     <h1 class="titulo-informe mb-4">Registro de áreas:</h1>
 
@@ -23,7 +23,6 @@
                         <thead>
                             <tr>
                                 <th>ÁREA</th>
-                                <th>REGISTRO</th>
                                 <th>EDITAR</th>
                                 <th>ELIMINAR</th>
                             </tr>
@@ -34,14 +33,13 @@
                         @foreach ($areas as $area)
                         <tr>
                             <td>{{$area->area}}</td>
-                            <td>{{$area->created_at}}</td>
 
                             <td><a href="/timeclock/public/areas/{{$area->id}}/edit" class="btn btn-warning btn-sm">Editar</a></td>
                             <td>
                                 <form action="/timeclock/public/eliminar_area/{{$area->id}}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirmDelete()">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
@@ -53,6 +51,21 @@
                 </div>
             </div>
         </div>
+
+        <script type="text/javascript">
+
+            function confirmDelete(){
+        
+                let respuesta = confirm("¿Estas seguro que deseas ELIMINAR el área?");
+        
+                if (respuesta == true){
+                    return true;
+                } else{
+                    return false;
+                }
+            }
+
+        </script>
 
     @endsection
 @endsection

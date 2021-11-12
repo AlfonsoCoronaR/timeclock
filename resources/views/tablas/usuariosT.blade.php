@@ -37,7 +37,7 @@
                             <td><form action="/timeclock/public/eliminar_usuario/{{$user->id}}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirmDelete()">Eliminar</button>
                             </form></td>
                         </tr>
             
@@ -48,6 +48,21 @@
                 </div>
             </div>
         </div>
+
+        <script type="text/javascript">
+
+            function confirmDelete(){
+        
+                let respuesta = confirm("¿Estas seguro que deseas ELIMINAR al usuario?");
+        
+                if (respuesta == true){
+                    return true;
+                } else{
+                    return false;
+                }
+            }
+
+        </script>
 
     @endsection
 @endsection

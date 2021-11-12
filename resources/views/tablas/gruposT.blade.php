@@ -24,7 +24,6 @@
                             <tr>
                                 <th>GRUPO</th>
                                 <th>ÁREA</th>
-                                <th>REGISTRO</th>
                                 <th>EDITAR</th>
                                 <th>ELIMINAR</th>
                             </tr>
@@ -36,14 +35,13 @@
                         <tr>
                             <td>{{$grupo->grupo}}</td>
                             <td>{{$grupo->area}}</td>
-                            <td>{{$grupo->created_at}}</td>
 
                             <td><a href="/timeclock/public/grupos/{{$grupo->id}}/edit" class="btn btn-warning btn-sm">Editar</a></td>
                             <td>
                                 <form action="/timeclock/public/eliminar_grupo/{{$grupo->id}}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirmDelete()">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
@@ -55,6 +53,21 @@
                 </div>
             </div>
         </div>
+
+        <script type="text/javascript">
+
+            function confirmDelete(){
+        
+                let respuesta = confirm("¿Estas seguro que deseas ELIMINAR el grupo?");
+        
+                if (respuesta == true){
+                    return true;
+                } else{
+                    return false;
+                }
+            }
+
+        </script>
 
     @endsection
 @endsection

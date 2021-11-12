@@ -8,49 +8,49 @@
 
         <li>
           <a href="#">
-            <i class='bx bx-timer'></i>
+            <img src="{{url('img/reloj.png')}}" alt="reloj.png" class="letra">
             <span class="links_name">Timeclock</span>
           </a>
           <span class="tooltip">Timeclock</span>
         </li>
         <li>
           <a href="#">
-            <i class="fab fa-gofore"></i>
+            <img src="{{url('img/g.png')}}" alt="G.png" class="letra">
             <span class="links_name"></span>
           </a>
           <span class="tooltip">G</span>
         </li>
         <li>
           <a href="#">
-            <i class="fas fa-euro-sign"></i>
+            <img src="{{url('img/e.png')}}" alt="E.png" class="letra">
             <span class="links_name"></span>
           </a>
           <span class="tooltip">E</span>
         </li>
         <li>
           <a href="#">
-            <i class="fab fa-scribd"></i>
+            <img src="{{url('img/s.png')}}" alt="S.png" class="letra">
             <span class="links_name"></span>
           </a>
           <span class="tooltip">S</span>
         </li>
         <li>
         <a href="#">
-          <i class="fab fa-dochub"></i>
+          <img src="{{url('img/d.png')}}" alt="D.png" class="letra">
           <span class="links_name"></span>
         </a>
         <span class="tooltip">D</span>
       </li>
       <li>
           <a href="#">
-            <i class='bx bxl-edge' ></i>
+            <img src="{{url('img/e.png')}}" alt="E.png" class="letra">
             <span class="links_name"></span>
           </a>
           <span class="tooltip">E</span>
         </li>
         <li>
           <a href="#">
-            <i class="fas fa-dollar-sign"></i>
+            <img src="{{url('img/s.png')}}" alt="S.png" class="letra">
             <span class="links_name"></span>
           </a>
           <span class="tooltip">S</span>

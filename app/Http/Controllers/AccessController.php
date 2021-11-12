@@ -26,6 +26,7 @@ class AccessController extends Controller
         /* var_dump($fecha); */
 
         $id_usuario = auth()->id();
+        $user = auth()->user()->name;
         
         $tabla = DB::table('registros')
                     ->select('*')
@@ -37,7 +38,7 @@ class AccessController extends Controller
         /* $ip = $request->ip();
         dd($ip); */
 
-        return view('vistas.user')->with(['registros' => $tabla]);
+        return view('vistas.user')->with(['registros' => $tabla, 'user' => $user]);
 
     }
 

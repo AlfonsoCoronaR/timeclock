@@ -19,6 +19,7 @@ class UserController extends Controller
     public function index()
     {
         $usuarios = DB::table('grupos')->join('users', 'users.id_grupo', 'grupos.id')
+                                        ->where('users.id', '<>', 1)
                                         ->where('grupos.disable', '<>', 1)
                                         ->where('users.disable', '<>', 1)
                                         ->select('*')

@@ -92,7 +92,7 @@ class RegistroController extends Controller
         $registro = new Registro();
 
         $registro->fecha = now();
-        $registro->enfermedad = now();
+        $registro->enfermedad = $request->get('fecha');
         $registro->id_usuario = auth()->id();
 
         $registro->save();
