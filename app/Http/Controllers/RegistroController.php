@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Registro;
 use Carbon\Carbon;
+use PHPUnit\Util\Test;
 
 class RegistroController extends Controller
 {
@@ -19,7 +20,7 @@ class RegistroController extends Controller
 
         $registro->save();
 
-        return redirect()->to('/usuario');
+        return redirect()->to('/correoIn');
     }
     
     public function comida(Request $request)
@@ -32,7 +33,7 @@ class RegistroController extends Controller
 
         $registro->save();
 
-        return redirect()->to('/usuario');
+        return redirect()->to('/correoBreak');
     }
 
     public function regreso(Request $request)
@@ -45,7 +46,7 @@ class RegistroController extends Controller
 
         $registro->save();
 
-        return redirect()->to('/usuario');
+        return redirect()->to('/correoReturn');
     }
 
     public function salida(Request $request)
@@ -58,7 +59,7 @@ class RegistroController extends Controller
 
         $registro->save();
 
-        return redirect()->to('/usuario');
+        return redirect()->to('/correoOut');
     }
 
     public function vacaciones(Request $request)
@@ -71,7 +72,7 @@ class RegistroController extends Controller
 
         $registro->save();
 
-        return redirect()->to('/usuario');
+        return redirect()->to('/correoVacation');
     }
 
     public function finvacaciones(Request $request)
@@ -84,7 +85,7 @@ class RegistroController extends Controller
 
         $registro->save();
 
-        return redirect()->to('/usuario');
+        return redirect()->to('/correoEndVacation');
     }
 
     public function enfermedad(Request $request)
@@ -97,6 +98,6 @@ class RegistroController extends Controller
 
         $registro->save();
 
-        return redirect()->to('/usuario');
+        return redirect()->to('/correoSend');
     }
 }

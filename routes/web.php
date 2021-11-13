@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Http\Controllers\AccessController;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\CorreoController;
 use App\Models\Registro;
 
 /*
@@ -63,5 +64,19 @@ Route::put('/eliminar_area/{id}', [DeleteController::class, 'areas']);
 Route::put('/eliminar_grupo/{id}', [DeleteController::class, 'grupos']);
 
 Route::put('/eliminar_usuario/{id}', [DeleteController::class, 'usuario']);
+
+Route::get('/correoIn', [CorreoController::class, 'sendIn']);
+
+Route::get('/correoBreak', [CorreoController::class, 'sendBreak']);
+
+Route::get('/correoReturn', [CorreoController::class, 'sendReturn']);
+
+Route::get('/correoOut', [CorreoController::class, 'sendOut']);
+
+Route::get('/correoVacation', [CorreoController::class, 'sendVacation']);
+
+Route::get('/correoEndVacation', [CorreoController::class, 'sendEndVacation']);
+
+Route::get('/correoSend', [CorreoController::class, 'send']);
 
 
