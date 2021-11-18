@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Correo;
+use App\Models\Notificacion;
 use Illuminate\Http\Request;
 
 class CorreoController extends Controller
 {
-    public function sendIn()
+    public function sendIn(Request $request)
     {
         $fecha = now();
         $email = auth()->user()->email;

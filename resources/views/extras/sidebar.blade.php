@@ -41,13 +41,6 @@
       </a>
       <span class="tooltip">Administrar Usuarios</span>
     </li>
-    <li>
-        <a href="#">
-          <i class='bx bx-chat' ></i>
-          <span class="links_name">Notificaciones</span>
-        </a>
-        <span class="tooltip">Notificaciones</span>
-      </li>
 
      <li class="profile">
        <form action="{{url('/salir')}}" method="POST">

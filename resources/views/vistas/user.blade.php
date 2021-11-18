@@ -32,48 +32,49 @@
                             <form method="POST" action="{{url('/usuario_entrada')}}" name="miformulario">
                                 @csrf
                                 
-                                <input type="hidden" id="entrada">
+                                <input type="hidden" name="registrar" value="entrada">
                                 <button type="submit" class="btn btn-outline-warning btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="ENTRADA" onclick="return confirmEntrada()"><i class="fas fa-door-open"></i></button>
                             </form>
                         </td>
                         <td class="align-middle">
                             <form method="POST" action="{{url('/usuario_comida')}}">
                                 @csrf
-                                <input type="hidden" id="comida">
+                                <input type="hidden" name="registrar" value="comida">
                                 <button type="submit" class="btn btn-outline-warning btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="ALIMENTOS" onclick="return confirmAlimentos()"><i class="fas fa-utensils"></i></button>
                             </form>
                         </td>
                         <td class="align-middle">
                             <form method="POST" action="{{url('/usuario_regreso')}}">
                                 @csrf
-                                <input type="hidden" id="regreso">
+                                <input type="hidden" name="registrar" value="comida_regreso">
                                 <button type="submit" class="btn btn-outline-warning btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="REGRESO" onclick="return confirmRegreso()"><i class="fas fa-undo-alt"></i></button>
                             </form>
                         </td>
                         <td class="align-middle">
                             <form method="POST" action="{{url('/usuario_salida')}}">
                                 @csrf
-                                <input type="hidden" id="salida">
+                                <input type="hidden" name="registrar" value="salida">
                                 <button type="submit" class="btn btn-outline-warning btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="SALIDA" onclick="return confirmSalida()"><i class="fas fa-door-closed"></i></button>
                             </form>
                         </td>
                         <td class="align-middle">
                             <form method="POST" action="{{url('/usuario_vacaciones')}}">
                                 @csrf
-                                <input type="hidden" id="vacaciones">
+                                <input type="hidden" name="registrar" value="vacaciones">
                                 <button type="submit" class="btn btn-outline-warning btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="VACACIONES" onclick="return confirmVacaciones()"><i class="fas fa-plane-departure"></i></button>
                             </form>
                         </td>
                         <td class="align-middle">
                             <form method="POST" action="{{url('/usuario_finvacaciones')}}">
                                 @csrf
-                                <input type="hidden" id="finvacaciones">
+                                <input type="hidden" name="registrar" value="finvacaciones">
                                 <button type="submit" class="btn btn-outline-warning btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="FIN VACACIONES" onclick="return confirmFinVacaciones()"><i class="fas fa-plane-arrival"></i></button>
                             </form>
                         </td>
                         <td>
                             <form method="POST" action="{{url('/usuario_enfermedad')}}">
                                 @csrf
+                                <input type="hidden" name="registrar" value="enfermedad">
                                 <div class="mb-2">
                                     <input name="fecha" type="date" id="enfermedad">
                                 </div>

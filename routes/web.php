@@ -65,18 +65,20 @@ Route::put('/eliminar_grupo/{id}', [DeleteController::class, 'grupos']);
 
 Route::put('/eliminar_usuario/{id}', [DeleteController::class, 'usuario']);
 
-Route::get('/correoIn', [CorreoController::class, 'sendIn']);
+Route::get('/correoIn', [CorreoController::class, 'sendIn'])->middleware('auth');
 
-Route::get('/correoBreak', [CorreoController::class, 'sendBreak']);
+Route::get('/correoBreak', [CorreoController::class, 'sendBreak'])->middleware('auth');
 
-Route::get('/correoReturn', [CorreoController::class, 'sendReturn']);
+Route::get('/correoReturn', [CorreoController::class, 'sendReturn'])->middleware('auth');
 
-Route::get('/correoOut', [CorreoController::class, 'sendOut']);
+Route::get('/correoOut', [CorreoController::class, 'sendOut'])->middleware('auth');
 
-Route::get('/correoVacation', [CorreoController::class, 'sendVacation']);
+Route::get('/correoVacation', [CorreoController::class, 'sendVacation'])->middleware('auth');
 
-Route::get('/correoEndVacation', [CorreoController::class, 'sendEndVacation']);
+Route::get('/correoEndVacation', [CorreoController::class, 'sendEndVacation'])->middleware('auth');
 
-Route::get('/correoSend', [CorreoController::class, 'send']);
+Route::get('/correoSend', [CorreoController::class, 'send'])->middleware('auth');
+
+Route::get('/registrosExcel', [RegistroController::class, 'exportExcel'])->middleware('auth');
 
 

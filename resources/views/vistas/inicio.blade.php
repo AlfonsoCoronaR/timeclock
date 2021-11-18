@@ -5,7 +5,10 @@
 
         <div class="container">
             <div class="table-registro row justify-content-center">
-                <div class="col-lg-11 mt-4 text-center">
+                <div class="col-lg-11">
+                    <a href="{{url('/registrosExcel')}}" class="btn btn-success float-left mt-3">Exportar <i class="far fa-file-excel"></i></a>
+                </div>
+                <div class="col-lg-11  text-center">
 
                     <h1 class="titulo-informe mb-4">Registro de usuarios:</h1>
 

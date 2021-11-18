@@ -25,6 +25,18 @@
     <script>
       $(document).ready(function() {
           $('#registros').DataTable({
+            language: {
+              "lengthMenu": "Mostrando _MENU_ registros", 
+              "sSearch": "Buscar:",
+              "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+              "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 gesitros",
+              "oPaginate": {
+                "sFisrt": "Primero",
+                "sLast": "ültimo", 
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior",
+              }
+            },
             "paging":   true,
             "ordering": false,
             "info":     true
